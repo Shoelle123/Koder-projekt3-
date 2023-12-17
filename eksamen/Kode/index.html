@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="projekt3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Rubik&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>Home</title>
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav_links">
+                <li><a href="index.html">Forside</a></li>
+                <li><a href="portifolie.html">Portifolie</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <div class="cta" onclick="window.location.href='#kontakt';">
+            <button class="button1">kontakt</button>
+        </div>
+
+    </header>
+
+         <div class="logo-container">
+             <img src="billedemappe_til_projekt_3/let_me_serve_you-2.gif" alt="logo" class="logo">
+         </div>
+
+        <div class="textbook1">
+              <h1>Content-creator</h1>
+              <h2>Med speciale i restauranter, cafeer og barer</h2>
+         </div>
+
+        <div class="foto-container">
+          <img src="billedemappe_til_projekt_3/tatar.jpg" alt="foto" class="foto">
+          <img src="billedemappe_til_projekt_3/anretning.JPG" alt="foto" class="foto">
+        </div>
+
+        <div class="video-section1">
+            <iframe class="youtube-video" src="https://www.youtube.com/embed/1UlwW03S_CE" allowfullscreen></iframe>
+        </div>
+        
+    
+        <div class="om_mig-container">
+             <div class="column1">
+                 <img src="billedemappe_til_projekt_3/potrat.jpeg" alt="potrat" class="potrat-image">
+        </div>
+
+        <div class="column2">
+        <div class="textbook2">
+                    <h2>Om mig</h2>
+                    <p>Jeg elsker at tage billeder og redigere videoer, men mest af alt 
+                        så elsker jeg at drive en virksomhed frem til sucess.
+                        Jeg har arbejdet 10 år i restaurationsbranhcen og kender derfor til vigtigheden af at 
+                        være aktive på de sociale medier. Jeg specialisere mig derfor indenfor
+                        dette område og henvender mig især til nyopstartede virksomheder. 
+                    </p>
+        </div>
+        </div>
+      
+      </div>
+         <footer>
+         <div class="footer_container"> 
+         <div class="socialicons"> 
+                <a href="https://www.facebook.com/shirley.holm2/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.youtube.com/channel/UChQRizSnFZeprLLvvIGHzjg"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+            <div class="footerbottom">
+                  <p>Copyright 2023 & Designed by shoelleproduction.com</p>
+            </div>
+            </div>
+         </footer>
+
+        <div class="overlay" onclick="closeNav()"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var navLinks = document.querySelector('.nav_links');
+            var burgerMenu = document.querySelector('.burger-menu');
+    
+            burgerMenu.addEventListener('click', function () {
+    navLinks.classList.toggle('show');
+    document.querySelector('.overlay').classList.toggle('show');
+});
+    
+            // Close the menu when a link is clicked
+            var navLinksList = document.querySelectorAll('.nav_links li a');
+            navLinksList.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    navLinks.classList.remove('show');
+                });
+            });
+        });
+        
+        function closeNav() {
+            document.querySelector('.nav_links').classList.remove('show');
+            document.querySelector('.overlay').classList.remove('show');
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+

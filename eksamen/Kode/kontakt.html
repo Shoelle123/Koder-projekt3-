@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projekt3.css">
+    <link rel="stylesheet" href="kontaktboks.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>kontakt</title>
+</head>
+<body>
+    <header>
+        <nav>
+
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav_links">
+                <li><a href="index.html">Forside</a></li>
+                <li><a href="portifolie.html">Portifolie</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+
+        </nav>
+
+        <div class="cta" onclick="window.location.href='#Kontakt';">
+            <button class="button1">Kontakt</button>
+        </div>
+
+    </header>
+
+        <h1 class="tittle">Kontakt her </h1>
+        <section class="contact-section">
+            <form class="form">
+                <div class="id">
+                    <div class="name">
+                        <label for="name">Navn</label>
+                        <input id="name" type="text" name="name">
+                    </div>
+                    <div class="email">
+                        <label for="email">Email</label>
+                        <input id="email" type="text" name="email">
+                    </div>
+                </div>
+                <div class="subject">
+                    <label for="subject">Emne</label>
+    
+                    <input id="subject" type="text" name="subject">
+                </div>
+                <label>Din besked</label>
+                  <textarea name="content" cols="30" rows="10"></textarea>
+
+                    <button type="submit">Send</button>
+                </form>
+        </section>
+
+    <footer>
+        <div class="footer_container"> 
+            <div class="socialicons"> 
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+
+        <div class="footerbottom">
+                <p>Copyright & Designed by shoelleproduction</p>
+        </div>
+        </div>
+    </footer>
+
+    <div class="overlay" onclick="closeNav()"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var navLinks = document.querySelector('.nav_links');
+            var burgerMenu = document.querySelector('.burger-menu');
+    
+            burgerMenu.addEventListener('click', function () {
+                navLinks.classList.toggle('show');
+            });
+    
+            // Close the menu when a link is clicked
+            var navLinksList = document.querySelectorAll('.nav_links li a');
+            navLinksList.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    navLinks.classList.remove('show');
+                });
+            });
+        });
+        
+        function closeNav() {
+            document.querySelector('.nav_links').classList.remove('show');
+            document.querySelector('.overlay').classList.remove('show');
+        }
+    </script>
+
+</body>
+</html>

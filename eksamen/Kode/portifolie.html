@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projekt3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>portifolie</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav_links">
+                <li><a href="index.html">Forside</a></li>
+                <li><a href="portifolie.html">Portifolie</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+
+         <div class="cta" onclick="window.location.href='#Kontakt';">
+            <button class="button1">Kontakt</button>
+         </div>
+
+    </header>
+
+    <h1 class="tittle">Foto</h1>
+
+    <div class="slideshow-container">
+        <div class="slideshow">
+            <img class="active" src="billedemappe_til_projekt_3/anretning.JPG" alt="Slide 1">
+        </div>
+        <div class="slider-nav">
+            <button class="previous"><i class="fas fa-arrow-left"></i></button>
+            <button class="next"><i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+    
+     <h1>Logoer </h1>
+
+    <div class="slideshow-container1">
+        <div class="slideshow1">
+            <img src="billedemappe_til_projekt_3/logo-salute.png" alt="Slide 1">
+        </div>
+    </div>
+
+    <h1>Video og Reklame</h1>
+    <div class="video-section1">
+        <iframe class="youtube-video" src="https://www.youtube.com/embed/cLKI1sBvCTE" allowfullscreen></iframe>
+    </div>
+    
+    <footer>
+        <div class="footer_container">
+            <div class="socialicons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="footerbottom">
+                <p>Copyright 2023 & Designed by shoelleproduction</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="overlay" onclick="closeNav()"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var navLinks = document.querySelector('.nav_links');
+            var burgerMenu = document.querySelector('.burger-menu');
+
+            burgerMenu.addEventListener('click', function () {
+                navLinks.classList.toggle('show');
+            });
+
+            // Close the menu when a link is clicked
+            var navLinksList = document.querySelectorAll('.nav_links li a');
+            navLinksList.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    navLinks.classList.remove('show');
+                });
+            });
+
+            const images = document.querySelectorAll('.slideshow img');
+            const prevButton = document.querySelector('.previous');
+            const nextButton = document.querySelector('.next');
+
+            let currentIndex = 0;
+
+            function showImage(index) {
+                images.forEach(img => img.classList.remove('active'));
+                images[index].classList.add('active');
+            }
+
+            function nextImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            }
+
+            function previousImage() {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(currentIndex);
+            }
+
+            nextButton.addEventListener('click', nextImage);
+            prevButton.addEventListener('click', previousImage);
+
+            // Initial setup to handle the current width
+            showImage(currentIndex);
+        });
+
+        function closeNav() {
+            document.querySelector('.nav_links').classList.remove('show');
+            document.querySelector('.overlay').classList.remove('show');
+        }
+    </script>
+</body>
+
+</html>
